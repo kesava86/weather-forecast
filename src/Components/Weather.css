@@ -1,0 +1,340 @@
+/* Global Styles */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Header & City Search */
+.city {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 12px 50px 12px 20px; /* Adjust padding for spacing */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #1e88e5;
+}
+
+.search-container button {
+    background-color: #1e88e5;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #1565c0;
+}
+
+/* Align the search icon inside the input */
+.search-container input::placeholder {
+    color: #bbb;
+    font-size: 16px;
+}
+
+/* Error Message */
+.error-message {
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Weather Information Section */
+.content {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+}
+
+.weather-image img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.weather-temp {
+    font-size: 48px;
+    font-weight: 600;
+    margin: 15px 0;
+    color: #333;
+}
+
+.weather-city p {
+    font-size: 18px;
+    color: #666;
+}
+
+.weather-city .location {
+    font-size: 24px;
+    color: #1e88e5;
+}
+
+/* Weather Statistics Section */
+.weather-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.weather-stats > div {
+    background-color: #f0f4f8;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.weather-stats > div:hover {
+    background-color: #e3f2fd;
+}
+
+.weather-stats .humidity-icon,
+.weather-stats .wind-icon,
+.weather-stats .pressure-icon,
+.weather-stats .visibility-icon,
+.weather-stats .sunrise-icon,
+.weather-stats .sunset-icon {
+    font-size: 32px;
+    color: #1e88e5;
+    margin-bottom: 12px;
+}
+
+.weather-stats h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
+.weather-stats .humidity-percent,
+.weather-stats .wind-speed,
+.weather-stats .pressure-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.weather-stats .sunrise-time,
+.weather-stats .sunset-time {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Sunrise and Sunset Cards */
+.sunrise,
+.sunset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f4f8;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.sunrise:hover,
+.sunset:hover {
+    background-color: #e3f2fd;
+}
+
+.sunrise-icon,
+.sunset-icon {
+    font-size: 32px;
+    color: #1e88e5;
+    margin-bottom: 12px;
+}
+
+.sunrise-time,
+.sunset-time {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.sunrise-heading,
+.sunset-heading {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .weather-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .weather-image img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .weather-temp {
+        font-size: 30px;
+    }
+
+    .weather-stats .humidity-icon,
+    .weather-stats .wind-icon,
+    .weather-stats .visibility-icon,
+    .weather-stats .pressure-icon,
+    .weather-stats .sunrise-icon,
+    .weather-stats .sunset-icon {
+        font-size: 24px;
+    }
+
+    .sunrise-time,
+    .sunset-time {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .search-container {
+        max-width: 90%;
+    }
+
+    .weather-image img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .weather-temp {
+        font-size: 40px;
+    }
+
+    .weather-stats .humidity-icon,
+    .weather-stats .wind-icon,
+    .weather-stats .visibility-icon,
+    .weather-stats .pressure-icon,
+    .weather-stats .sunrise-icon,
+    .weather-stats .sunset-icon {
+        font-size: 28px;
+    }
+
+    .sunrise-time,
+    .sunset-time {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .weather-stats {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .search-container {
+        max-width: 350px;
+    }
+
+    .weather-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .weather-temp {
+        font-size: 48px;
+    }
+
+    .weather-stats .humidity-icon,
+    .weather-stats .wind-icon,
+    .weather-stats .visibility-icon,
+    .weather-stats .sunrise-icon,
+    .weather-stats .pressure-icon,
+    .weather-stats .sunset-icon {
+        font-size: 32px;
+    }
+
+    .sunrise-time,
+    .sunset-time {
+        font-size: 20px;
+    }
+}
+/* Common Styles for Sea Level and Ground Level */
+.sea-level, .grnd-level {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f4f8;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.sea-level:hover, .grnd-level:hover {
+    background-color: #e3f2fd;
+}
+
+/* Icons */
+.sea-level-icon, .grnd-level-icon {
+    font-size: 32px;
+    color: #1e88e5;
+    margin-bottom: 12px;
+}
+
+/* Values */
+.sea-level-value, .grnd-level-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.sea-level-heading, .grnd-level-heading {
+    font-size: 16px;
+    color: #777;
+    font-weight: 500;
+}
